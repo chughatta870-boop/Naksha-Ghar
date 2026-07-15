@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Naqsha Ghar - House Map Generator</title>
+<meta name="description" content="Ghar ka naqsha generator - 2.5 Marla se 20 Marla tak - by M Ijaz">
+<meta name="theme-color" content="#15573D">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="icons/icon-192x192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-inner">
+    <img src="icons/icon-96x96.png" alt="logo" class="logo">
+    <div>
+      <h1>Naqsha Ghar</h1>
+      <p class="tagline">House Map Generator &middot; by M Ijaz</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="card">
+    <h2>Plot Size Chunain</h2>
+    <p class="hint">Marla select karen, phir "Naqsha Banayen" dabayen.</p>
+    <div class="plot-grid" id="plotGrid">
+      <!-- buttons injected by JS -->
+    </div>
+    <p class="disclaimer">
+      ⚠️ Yeh sizes aam tor par istamaal honay walay standard hain (societies mein thoda farq ho sakta hai).
+      Yeh naqsha sirf <strong>conceptual / reference</strong> hai. Tameer se pehle apne plot ki asal
+      dimensions aur kisi qualified Architect / Structural Engineer se manzoori zaroor len.
+    </p>
+    <button id="generateBtn" class="btn btn-primary" disabled>Naqsha Banayen</button>
+  </section>
+
+  <section class="card" id="resultCard" hidden>
+    <h2>Aap ka Naqsha</h2>
+    <div class="canvas-wrap">
+      <canvas id="planCanvas"></canvas>
+    </div>
+    <div class="action-row">
+      <button id="downloadBtn" class="btn btn-secondary">⬇️ Download</button>
+      <button id="shareBtn" class="btn btn-secondary">📤 Share</button>
+      <button id="saveBtn" class="btn btn-secondary">💾 Save</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-head">
+      <h2>Saved Naqsha Jat</h2>
+      <button id="clearSavedBtn" class="btn-link">Clear All</button>
+    </div>
+    <div class="saved-grid" id="savedGrid">
+      <p class="empty-msg" id="emptyMsg">Abhi koi naqsha save nahi hua.</p>
+    </div>
+  </section>
+
+</main>
+
+<div id="installBanner" class="install-banner" hidden>
+  <span>App install karen taake offline bhi use ho sake</span>
+  <button id="installBtn">Install</button>
+  <button id="dismissInstall" class="btn-link">✕</button>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<footer>
+  <p>Made by <strong>M Ijaz</strong> &middot; Naqsha Ghar PWA</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+:root {
+  --green: #15573D;
+  --green-dark: #0d3d2b;
+  --gold: #F0C419;
+  --bg: #f4f6f5;
+  --card: #ffffff;
+  --text: #1c2b25;
+  --muted: #6b7a73;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding-bottom: 40px;
+}
+
+.app-header {
+  background: linear-gradient(135deg, var(--green), var(--green-dark));
+  color: white;
+  padding: 18px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.tagline {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+main {
+  max-width: 720px;
+  margin: 16px auto;
+  padding: 0 12px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: var(--green-dark);
+}
+
+.hint {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.plot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.plot-btn {
+  padding: 10px 4px;
+  border: 2px solid #dfe6e2;
+  background: #fafcfb;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.plot-btn:active {
+  transform: scale(0.96);
+}
+
+.plot-btn.selected {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: #fdf6e3;
+  border-left: 3px solid var(--gold);
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 13px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
+
+.btn-primary:disabled {
+  background: #b7c3bd;
+  cursor: not-allowed;
+}
+
+.action-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn-secondary {
+  background: #eef3f1;
+  color: var(--green-dark);
+  font-size: 0.85rem;
+  padding: 12px 6px;
+}
+
+.btn-secondary:active {
+  background: var(--green);
+  color: white;
+}
+
+.canvas-wrap {
+  width: 100%;
+  overflow: auto;
+  background: #fafcfb;
+  border: 1px solid #e3e9e6;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+#planCanvas {
+  max-width: 100%;
+  height: auto;
+  background: white;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.saved-item {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e3e9e6;
+  text-align: center;
+  background: #fafcfb;
+}
+
+.saved-item img {
+  width: 100%;
+  display: block;
+}
+
+.saved-item .label {
+  font-size: 0.7rem;
+  padding: 4px;
+  color: var(--green-dark);
+  font-weight: 600;
+}
+
+.empty-msg {
+  color: var(--muted);
+  font-size: 0.85rem;
+  grid-column: 1 / -1;
+}
+
+.install-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--green-dark);
+  color: white;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  z-index: 20;
+}
+
+.install-banner button#installBtn {
+  background: var(--gold);
+  color: var(--green-dark);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green-dark);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  z-index: 30;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 20px;
+}
+
+@media (min-width: 480px) {
+  .plot-grid { grid-template-columns: repeat(4, 1fr); }
+}
